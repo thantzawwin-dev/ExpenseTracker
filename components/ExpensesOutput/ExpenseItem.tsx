@@ -6,13 +6,13 @@ import { getFormattedDate } from "@/util/date";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "@/App";
 
-type Props = Omit<Expense, "id">;
+type Props = Expense;
 
-const ExpenseItem = ({ description, amount, date }: Props) => {
+const ExpenseItem = ({ id, description, amount, date }: Props) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   function expensePressHandler() {
-    navigation.navigate("ManageExpense");
+    navigation.navigate("ManageExpense", { expenseId: id });
   }
 
   return (

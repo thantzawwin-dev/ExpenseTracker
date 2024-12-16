@@ -24,8 +24,8 @@ const IconButton = ({ icon, size, color, onPress }: Props) => {
       onPress={onPress}
       style={({ pressed }) => pressed && styles.pressed}
     >
-      <View>
-        <Ionicons name={icon} size={size} color={color} onPress={() => {}} />
+      <View style={styles.buttonContainer}>
+        <Ionicons name={icon} size={size} color={color} />
       </View>
     </Pressable>
   );
